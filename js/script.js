@@ -1,0 +1,76 @@
+// common function for getting all button input
+function macProCost(component,cost){
+  const memoryCost = document.getElementById(component+"-cost")
+  previousMemoryCost = parseInt(memoryCost.innerText)
+  memoryCost.innerText = cost;
+  getTotalCost()
+}
+
+
+// get input from calculation section
+function getInputCost(product){
+  const productInput = document.getElementById(product + "-cost")
+  const productNumber = parseInt(productInput.innerText)
+  return productNumber;
+  
+}
+
+
+// total cost calculation
+function getTotalCost(){
+  const bestCost = getInputCost("best")
+  const memoryCost = getInputCost("memory")
+  const storageCost = getInputCost("storage")
+  const deliveryCost = getInputCost("delivery")
+
+  const subTotal = bestCost + memoryCost + storageCost + deliveryCost
+
+  document.getElementById("total-cost").innerText = subTotal
+
+  const promoCode = document.getElementById("promo-input")
+
+  if(promoCode.value == "stevekaku"){
+    const discount = subTotal * .2
+    document.getElementById("discount-cost").innerText = discount
+  }
+  else{
+    document.getElementById("discount-cost").innerText = subTotal
+  }
+
+
+}
+
+// memory cost handling function
+document.getElementById("8gb-memory").addEventListener('click',function(){
+    macProCost("memory",0);
+})
+
+document.getElementById("16gb-memory").addEventListener('click',function(){
+    macProCost("memory",180)
+})
+
+
+
+// storage cost handling function
+document.getElementById("256gb-storage").addEventListener('click',function(){ 
+    macProCost("storage",0)
+})
+
+document.getElementById("512gb-storage").addEventListener('click',function(){
+    macProCost("storage",100)
+})
+
+document.getElementById("1tb-storage").addEventListener('click',function(){  
+    macProCost("storage",180)
+})
+
+
+// delivery cost handling function
+
+document.getElementById("delivery-option1").addEventListener('click',function(){
+    macProCost("delivery",0)
+})
+
+document.getElementById("delivery-option2").addEventListener('click',function(){
+    macProCost("delivery",20)
+})

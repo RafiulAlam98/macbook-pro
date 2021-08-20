@@ -33,9 +33,9 @@
       <!-- -----------------Memory Section----------- -->
       <div>
         <h4 class="text-2xl mt-10 font-semibold mb-2">Memory</h4>
-        <button class="border font-semibold p-2 rounded  hover:bg-red-400   ">8GB unified
+        <button id="8gb-memory" class="border font-semibold p-2 rounded  hover:bg-red-400   ">8GB unified
           Memory</button>
-        <button class="border font-semibold p-2 rounded  hover:bg-red-400   ">16GB unified
+        <button id="16gb-memory" class="border font-semibold p-2 rounded  hover:bg-red-400   ">16GB unified
           Memory</button>
       </div>
 
@@ -43,53 +43,60 @@
       <!-- ---------------Storage Section----------- -->
       <div>
         <h4 class="text-2xl mt-10 font-semibold mb-2">Storage</h4>
-        <button class="border font-semibold p-2 rounded  hover:bg-red-400   ">256GB SSD storage</button>
-        <button class="border font-semibold p-2 rounded  hover:bg-red-400   ">512GB SSD storage
+        <button id="256gb-storage" class="border font-semibold p-2 rounded  hover:bg-red-400   ">256GB SSD storage</button>
+        <button id="512gb-storage" class="border font-semibold p-2 rounded  hover:bg-red-400   ">512GB SSD storage
         </button>
-        <button class="border font-semibold p-2 rounded  hover:bg-red-400   ">1TB SSD storage</button>
+        <button id="1tb-storage" class="border font-semibold p-2 rounded  hover:bg-red-400   ">1TB SSD storage</button>
       </div>
 
 
       <!-- ----------delivery section-------- -->
       <div>
         <h4 class="text-2xl mt-10 font-semibold mb-2">Choose Your Delivery option</h4>
-        <button class="border font-semibold p-2 rounded  hover:bg-red-400   ">Fri, Aug 25 Free Prime Delivery</button>
-        <button class="border font-semibold p-2 rounded  hover:bg-red-400   ">Fri, Aug 21 Delivery Charge $20 </button>
+        <button id="delivery-option1" class="border font-semibold p-2 rounded  hover:bg-red-400   ">Fri, Aug 25 Free Prime
+          Delivery</button>
+        <button id="delivery-option2" class="border font-semibold p-2 rounded  hover:bg-red-400   ">Fri, Aug 21 Delivery Charge
+          $20 </button>
       </div>
 
 
       <!-- --------Calculation Section------- -->
+<!-- best-price -->
       <div class="mt-10 flex justify-between pr-36 ">
         <h2 class="text-xl font-semibold">Best Price</h2>
-        <h2 class="text-xl font-semibold">$<span>1299</span></h2>
+        <h2 class="text-xl font-semibold">$<span id="best-cost">1299</span></h2>
       </div>
       <hr>
+<!-- ----memory-cost---- -->
       <div class="mt-5 flex justify-between pr-36 ">
         <h2 class="text-xl font-semibold">Extra Memory Cost</h2>
-        <h2 class="text-xl font-semibold">$<span>0</span></h2>
+        <h2 class="text-xl font-semibold">$<span id="memory-cost">0</span></h2>
       </div>
       <hr>
+<!-- storage cost -->
       <div class="mt-5 flex justify-between pr-36 ">
         <h2 class="text-xl font-semibold">Extra Storage Cost</h2>
-        <h2 class="text-xl font-semibold">$<span>0</span></h2>
+        <h2 class="text-xl font-semibold">$<span id="storage-cost">0</span></h2>
       </div>
       <hr>
+<!-- delivery cost -->
       <div class="mt-5 flex justify-between pr-36">
         <h2 class="text-xl font-semibold">Delivery Charge</h2>
-        <h2 class="text-xl font-semibold">$<span>0</span></h2>
+        <h2 class="text-xl font-semibold">$<span id="delivery-cost">0</span></h2>
       </div>
       <hr>
+      <!-- total cost -->
       <div class="mt-5 flex justify-between pr-36">
         <h2 class="text-xl font-semibold">Total Price</h2>
-        <h2 class="text-xl font-semibold">$<span>1299</span></h2>
+        <h2 class="text-xl font-semibold">$<span id="total-cost">1299</span></h2>
       </div>
 
       <!-- ----------Promo Code Section---------- -->
 
       <div class="mt-10">
         <h2 class="text-2xl">Add Promo code</h2>
-        <input class="border-2 rounded border-blue-400" type="text">
-        <button class="bg-red-800 text-white font-semibold p-2 rounded ml-2">Apply</button>
+        <input id="promo-input" class="border-2 rounded border-blue-400" type="text">
+        <button id="discount-apply" class="bg-red-800 text-white font-semibold p-2 rounded ml-2">Apply</button>
       </div>
     </section>
   </main>
@@ -98,7 +105,7 @@
     <hr>
     <section class="flex justify-center items-center mt-2">
       <h2 class="text-4xl font-semibold mr-2">Total Price:</h2>
-      <h2 class="text-4xl font-semibold">$<span>1299</span></h2>
+      <h2 class="text-4xl font-semibold">$<span id="discount-cost">1299</span></h2>
     </section>
   </footer>
 
