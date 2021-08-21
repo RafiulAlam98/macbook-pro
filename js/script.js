@@ -32,20 +32,17 @@ function getTotalCost(){
 
 
 // discount price calculation
-  function discountPrice(){
-const promoCode = document.getElementById("promo-input")  
-let codeValue = promoCode.value
+  	function discountPrice(){
+		const promoCode = document.getElementById("promo-input")  
+		let codeValue = promoCode.value
 
-  if(promoCode.value == "stevekaku"){
-    const discount = subTotal * 0.8 
-    document.getElementById("discount-cost").innerText = discount; 
-  }
-	promoCode.value =""
-	
-}
-    
-    discountPrice();
-    
+  		if(promoCode.value == "stevekaku"){
+    		const discount = subTotal * 0.8 
+    		document.getElementById("discount-cost").innerText = discount;
+			}
+	promoCode.value =""	
+}    
+    discountPrice();    
 }
 
 
@@ -77,14 +74,13 @@ document.getElementById("1tb-storage").addEventListener('click',function(){
 
 
 // delivery cost handling function
-
 document.getElementById("delivery-option1").addEventListener('click',function(){
     macProCost("delivery",0)
 })
-
 document.getElementById("delivery-option2").addEventListener('click',function(){
     macProCost("delivery",20)
 })
+
 
 
 // promo code handler function
