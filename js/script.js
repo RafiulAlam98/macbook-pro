@@ -1,7 +1,6 @@
 // common function for getting all button input
 function macProCost(component,cost){
   const componentCost = document.getElementById(component+"-cost")
-  previousMemoryCost = parseInt(componentCost.innerText)
   componentCost.innerText = cost;
   getTotalCost();
 }
@@ -34,8 +33,6 @@ function getTotalCost(){
 // discount price calculation
   	function discountPrice(){
 		const promoCode = document.getElementById("promo-input")  
-		let codeValue = promoCode.value
-
   		if(promoCode.value == "stevekaku"){
     		const discount = subTotal * 0.8 
     		document.getElementById("discount-cost").innerText = discount;
