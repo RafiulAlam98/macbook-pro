@@ -1,13 +1,13 @@
 // common function for getting all button input
 function macProCost(component,cost){
-  const memoryCost = document.getElementById(component+"-cost")
-  previousMemoryCost = parseInt(memoryCost.innerText)
-  memoryCost.innerText = cost;
-  getTotalCost()
+  const componentCost = document.getElementById(component+"-cost")
+  previousMemoryCost = parseInt(componentCost.innerText)
+  componentCost.innerText = cost;
+  getTotalCost();
 }
 
 
-// get input from calculation section
+// get input for calculation section
 function getInputCost(product){
   const productInput = document.getElementById(product + "-cost")
   const productNumber = parseInt(productInput.innerText)
@@ -18,27 +18,40 @@ function getInputCost(product){
 
 // total cost calculation
 function getTotalCost(){
-  const bestCost = getInputCost("best")
-  const memoryCost = getInputCost("memory")
-  const storageCost = getInputCost("storage")
-  const deliveryCost = getInputCost("delivery")
+  const bestCost = getInputCost("best");
+  const memoryCost = getInputCost("memory");
+  const storageCost = getInputCost("storage");
+  const deliveryCost = getInputCost("delivery");
+
 
   const subTotal = bestCost + memoryCost + storageCost + deliveryCost
 
   document.getElementById("total-cost").innerText = subTotal
 
-  const promoCode = document.getElementById("promo-input")
+  document.getElementById("discount-cost").innerText = subTotal
+
+
+// discount price calculation
+  function discountPrice(){
+const promoCode = document.getElementById("promo-input")  
+let codeValue = promoCode.value
 
   if(promoCode.value == "stevekaku"){
-    const discount = subTotal * .2
-    document.getElementById("discount-cost").innerText = discount
+    const discount = subTotal * 0.8 
+    document.getElementById("discount-cost").innerText = discount; 
+codeValue = ""
   }
-  else{
-    document.getElementById("discount-cost").innerText = subTotal
-  }
-
-
+	
+	console.log(codeValue)
+	
 }
+    
+    discountPrice();
+    
+}
+
+
+
 
 // memory cost handling function
 document.getElementById("8gb-memory").addEventListener('click',function(){
@@ -73,4 +86,10 @@ document.getElementById("delivery-option1").addEventListener('click',function(){
 
 document.getElementById("delivery-option2").addEventListener('click',function(){
     macProCost("delivery",20)
+})
+
+
+// promo code handler function
+document.getElementById("discount-btn").addEventListener('click',function(){
+    getTotalCost()
 })
