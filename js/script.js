@@ -39,10 +39,8 @@ let codeValue = promoCode.value
   if(promoCode.value == "stevekaku"){
     const discount = subTotal * 0.8 
     document.getElementById("discount-cost").innerText = discount; 
-codeValue = ""
   }
-	
-	console.log(codeValue)
+	promoCode.value =""
 	
 }
     
